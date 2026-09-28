@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Velora Studio | Premium Salon</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <!-- =====================================================
+         LOADER
+         ===================================================== -->
+
+    <div class="loader" id="loader">
+
+        <div class="loader-logo">
+            V
+        </div>
+
+        <p class="business-name">
+            VELORA STUDIO
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+
+            <!-- LOGO -->
+
+            <a href="#" class="logo">
+
+
+                <!-- Default V -->
+                <span class="logo-fallback">
+                    V
+                </span>
+
+
+                <!-- Uploaded Business Logo -->
+                <img
+                    class="business-logo"
+                    src=""
+                    alt="Business Logo"
+                    style="display: none;"
+                >
+
+
+                <div>
+
+                    <strong class="business-name">
+                        VELORA
+                    </strong>
+
+                    <small>
+                        STUDIO
+                    </small>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="nav-links"
+                id="navLinks"
+            >
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#gallery">
+                    Gallery
+                </a>
+
+                <a href="#reviews">
+                    Reviews
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+
+                <button
+                    class="nav-book-btn"
+                    onclick="openBooking()"
+                >
+                    Book Appointment
+                </button>
+
+            </nav>
+
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <main>
+
+        <section
+            class="hero"
+            id="home"
+        >
+
+            <div class="hero-overlay"></div>
+
+
+            <div class="hero-content reveal">
+
+
+                <span class="hero-label">
+
+                    <span class="business-tagline">
+                        PREMIUM SALON & BEAUTY STUDIO
+                    </span>
+
+                </span>
+
+
+                <h1>
+
+                    Your Style.
+
+                    <br>
+
+                    <em>
+                        Your Confidence.
+                    </em>
+
+                </h1>
+
+
+                <p>
+                    Professional beauty services designed to make
+                    you look your best and feel even better.
+                </p>
+
+
+                <div class="hero-buttons">
+
+
+                    <button
+                        class="primary-btn"
+                        onclick="openBooking()"
+                    >
+
+                        Book Appointment
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <a
+                        href="#services"
+                        class="secondary-btn"
+                    >
+                        Explore Services
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HERO STATS -->
+
+            <div class="hero-bottom">
+
+
+                <div>
+
+                    <strong>
+                        4.9
+                    </strong>
+
+                    <span>
+                        ★★★★★
+                    </span>
+
+                    <small>
+                        Client Rating
+                    </small>
+
+                </div>
+
+
+                <div>
+
+                    <strong id="heroServiceCount">
+                        5+
+                    </strong>
+
+                    <small>
+                        Premium Services
+                    </small>
+
+                </div>
+
+
+                <div>
+
+                    <strong id="businessOpeningTime">
+                        10 AM
+                    </strong>
+
+                    <small>
+                        Opening Time
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SERVICES
+             ===================================================== -->
+
+        <section
+            class="services-section section"
+            id="services"
+        >
+
+
+            <div class="section-heading reveal">
+
+
+                <span>
+                    WHAT WE OFFER
+                </span>
+
+
+                <h2>
+
+                    Services made
+
+                    <em>
+                        for you.
+                    </em>
+
+                </h2>
+
+
+                <p>
+                    From everyday grooming to special occasions,
+                    choose a service that fits your style.
+                </p>
+
+            </div>
+
+
+
+            <div
+                class="services-grid"
+                id="servicesGrid"
+            >
+
+                <div class="loading-card">
+
+                    <div class="spinner"></div>
+
+                    <p>
+                        Loading services...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             REVIEWS
+             ===================================================== -->
+
+        <section
+            class="reviews-section section"
+            id="reviews"
+        >
+
+
+            <div class="section-heading reveal">
+
+
+                <span>
+                    CLIENT LOVE
+                </span>
+
+
+                <h2>
+
+                    Loved by our
+
+                    <em>
+                        clients.
+                    </em>
+
+                </h2>
+
+
+                <p>
+                    See what our clients say about their experience.
+                </p>
+
+            </div>
+
+
+
+            <div class="rating-summary">
+
+
+                <strong id="averageRating">
+                    4.9
+                </strong>
+
+
+                <div>
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <span>
+                        Excellent client experience
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="reviews-grid"
+                id="reviewsGrid"
+            >
+
+                <div class="loading-card">
+
+                    <div class="spinner"></div>
+
+                    <p>
+                        Loading reviews...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             GALLERY
+             ===================================================== -->
+
+        <section
+            class="gallery-section section"
+            id="gallery"
+        >
+
+
+            <div class="section-heading reveal">
+
+
+                <span>
+                    OUR WORK
+                </span>
+
+
+                <h2>
+
+                    A glimpse of
+
+                    <em class="business-name">
+                        Velora.
+                    </em>
+
+                </h2>
+
+
+                <p>
+                    Explore our work, treatments and beauty experiences.
+                </p>
+
+            </div>
+
+
+
+            <div class="gallery-filters reveal">
+
+
+                <button
+                    class="gallery-filter active"
+                    data-filter="all"
+                >
+                    All
+                </button>
+
+
+                <button
+                    class="gallery-filter"
+                    data-filter="hair"
+                >
+                    Hair
+                </button>
+
+
+                <button
+                    class="gallery-filter"
+                    data-filter="spa"
+                >
+                    Spa
+                </button>
+
+
+                <button
+                    class="gallery-filter"
+                    data-filter="beard"
+                >
+                    Beard
+                </button>
+
+
+                <button
+                    class="gallery-filter"
+                    data-filter="bridal"
+                >
+                    Bridal
+                </button>
+
+            </div>
+
+
+
+            <div
+                class="gallery-grid"
+                id="galleryGrid"
+            >
+
+                <div class="loading-card">
+
+                    <div class="spinner"></div>
+
+                    <p>
+                        Loading gallery...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ABOUT
+             ===================================================== -->
+
+        <section
+            class="about-section section"
+            id="about"
+        >
+
+
+            <div class="about-image reveal">
+
+
+                <div class="about-image-content">
+
+
+                    <span class="business-name">
+                        VELORA
+                    </span>
+
+
+                    <strong>
+                        STUDIO
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="about-content reveal">
+
+
+                <span class="section-label">
+                    ABOUT US
+                </span>
+
+
+                <h2>
+
+                    Beauty is not just
+
+                    <em>
+                        how you look.
+                    </em>
+
+                </h2>
+
+
+                <p>
+
+                    At
+
+                    <span class="business-name">
+                        Velora Studio
+                    </span>,
+
+                    we believe a great salon experience
+                    should leave you feeling confident, relaxed and ready
+                    to take on the world.
+
+                </p>
+
+
+                <p>
+
+                    Our professionals focus on quality, attention to detail
+                    and a personalized experience for every client.
+
+                </p>
+
+
+
+                <div class="about-points">
+
+
+                    <div>
+
+                        <span>
+                            ✓
+                        </span>
+
+                        <p>
+                            Professional stylists
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            ✓
+                        </span>
+
+                        <p>
+                            Premium products
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            ✓
+                        </span>
+
+                        <p>
+                            Personalized service
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <button
+                    class="primary-btn"
+                    onclick="openBooking()"
+                >
+
+                    Book Your Visit
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CTA
+             ===================================================== -->
+
+        <section class="cta-section">
+
+
+            <div class="cta-content reveal">
+
+
+                <span>
+                    READY FOR A NEW LOOK?
+                </span>
+
+
+                <h2>
+
+                    Your next great look
+
+                    <em>
+                        starts here.
+                    </em>
+
+                </h2>
+
+
+                <button
+                    class="primary-btn light-btn"
+                    onclick="openBooking()"
+                >
+
+                    Book Appointment
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CONTACT
+             ===================================================== -->
+
+        <section
+            class="contact-section section"
+            id="contact"
+        >
+
+
+            <div class="section-heading reveal">
+
+
+                <span>
+                    GET IN TOUCH
+                </span>
+
+
+                <h2>
+
+                    Visit
+
+                    <em class="business-name">
+                        Velora.
+                    </em>
+
+                </h2>
+
+            </div>
+
+
+
+            <div class="contact-grid">
+
+
+                <!-- LOCATION -->
+
+                <div class="contact-card reveal">
+
+
+                    <span class="contact-icon">
+                        📍
+                    </span>
+
+
+                    <h3>
+                        Location
+                    </h3>
+
+
+                    <p class="business-address">
+                        Indore, Madhya Pradesh
+                    </p>
+
+
+                    <a
+                        href="#"
+                        class="contact-link business-map"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Get Directions →
+                    </a>
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="contact-card reveal">
+
+
+                    <span class="contact-icon">
+                        📞
+                    </span>
+
+
+                    <h3>
+                        Call Us
+                    </h3>
+
+
+                    <p class="business-phone">
+                        9999999999
+                    </p>
+
+
+                    <a
+                        href="tel:9999999999"
+                        class="contact-link business-phone-link"
+                    >
+                        Call Now →
+                    </a>
+
+                </div>
+
+
+
+                <!-- WHATSAPP -->
+
+                <div class="contact-card reveal">
+
+
+                    <span class="contact-icon">
+                        💬
+                    </span>
+
+
+                    <h3>
+                        WhatsApp
+                    </h3>
+
+
+                    <p class="business-whatsapp-text">
+                        Chat with our team
+                    </p>
+
+
+                    <a
+                        href="#"
+                        class="contact-link business-whatsapp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Message Us →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer>
+
+
+        <div class="footer-container">
+
+
+            <div class="footer-brand">
+
+
+                <a
+                    href="#"
+                    class="logo"
+                >
+
+
+                    <span class="logo-fallback">
+                        V
+                    </span>
+
+
+                    <img
+                        class="business-logo"
+                        src=""
+                        alt="Business Logo"
+                        style="display: none;"
+                    >
+
+
+                    <div>
+
+                        <strong class="business-name">
+                            VELORA
+                        </strong>
+
+                        <small>
+                            STUDIO
+                        </small>
+
+                    </div>
+
+                </a>
+
+
+
+                <p class="business-tagline">
+
+                    Premium salon experience,
+                    designed around you.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- FOOTER LINKS -->
+
+            <div class="footer-links">
+
+
+                <div>
+
+                    <h4>
+                        Explore
+                    </h4>
+
+                    <a href="#home">
+                        Home
+                    </a>
+
+                    <a href="#services">
+                        Services
+                    </a>
+
+                    <a href="#reviews">
+                        Reviews
+                    </a>
+
+                    <a href="#gallery">
+                        Gallery
+                    </a>
+
+                </div>
+
+
+
+                <div>
+
+                    <h4>
+                        Company
+                    </h4>
+
+                    <a href="#about">
+                        About
+                    </a>
+
+                    <a href="#contact">
+                        Contact
+                    </a>
+
+                </div>
+
+
+
+                <div>
+
+                    <h4>
+                        Follow Us
+                    </h4>
+
+
+                    <a
+                        href="#"
+                        class="business-instagram"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Instagram
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="business-facebook"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Facebook
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+
+            <p>
+
+                © 2026
+
+                <span
+                    id="footerBusinessName"
+                    class="business-name"
+                >
+                    Velora Studio
+                </span>.
+
+                Demo Website.
+
+            </p>
+
+
+            <a
+                href="admin-login.html"
+                class="owner-link"
+            >
+                Owner Panel
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         BOOKING MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="bookingModal"
+    >
+
+
+        <div class="booking-modal">
+
+
+            <button
+                class="close-modal"
+                onclick="closeBooking()"
+            >
+                ×
+            </button>
+
+
+
+            <div class="modal-header">
+
+
+                <span>
+                    BOOK YOUR VISIT
+                </span>
+
+
+                <h2>
+
+                    Make an
+
+                    <em>
+                        appointment.
+                    </em>
+
+                </h2>
+
+
+                <p>
+                    Choose your service and preferred time.
+                </p>
+
+            </div>
+
+
+
+            <form id="bookingForm">
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+
+                        <label>
+                            Name *
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            placeholder="Your name"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+
+                        <label>
+                            Phone *
+                        </label>
+
+
+                        <input
+                            type="tel"
+                            id="customerPhone"
+                            placeholder="9876543210"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+
+                    <label>
+                        Email
+                    </label>
+
+
+                    <input
+                        type="email"
+                        id="customerEmail"
+                        placeholder="you@example.com"
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+
+                    <label>
+                        Service *
+                    </label>
+
+
+                    <select
+                        id="bookingService"
+                        required
+                    >
+
+                        <option value="">
+                            Select a service
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+
+                        <label>
+                            Date *
+                        </label>
+
+
+                        <input
+                            type="date"
+                            id="bookingDate"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+
+                        <label>
+                            Time *
+                        </label>
+
+
+                        <input
+                            type="time"
+                            id="bookingTime"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+
+                    <label>
+                        Notes
+                    </label>
+
+
+                    <textarea
+                        id="bookingNotes"
+                        rows="3"
+                        placeholder="Any special request?"
+                    ></textarea>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="primary-btn full-btn"
+                    id="bookingSubmit"
+                >
+
+                    Confirm Appointment
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SUCCESS MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="successModal"
+    >
+
+
+        <div class="success-modal">
+
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <h2>
+
+                Appointment
+
+                <em>
+                    requested!
+                </em>
+
+            </h2>
+
+
+            <p id="successMessage">
+
+                Your appointment request has been submitted.
+
+            </p>
+
+
+            <button
+                class="primary-btn"
+                onclick="closeSuccess()"
+            >
+                Done
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+         ===================================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+
+        <span>
+            ✓
+        </span>
+
+        <p id="toastMessage">
+            Success
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Velora Studio | Admin Dashboard</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     SIDEBAR
+================================================== -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+    <div class="admin-logo">
+
+        <div class="logo-circle">
+            V
+        </div>
+
+        <div>
+
+            <strong>
+                VELORA
+            </strong>
+
+            <small>
+                STUDIO ADMIN
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <nav class="admin-nav">
+
+        <button
+            class="nav-item active"
+            data-section="dashboard"
+        >
+            <span>⌂</span>
+            Dashboard
+        </button>
+
+
+        <button
+            class="nav-item"
+            data-section="appointments"
+        >
+            <span>◷</span>
+            Appointments
+        </button>
+
+
+        <button
+            class="nav-item"
+            data-section="services"
+        >
+            <span>✂</span>
+            Services
+        </button>
+
+
+        <button
+            class="nav-item"
+            data-section="gallery"
+        >
+            <span>▣</span>
+            Gallery
+        </button>
+
+
+        <button
+            class="nav-item"
+            data-section="reviews"
+        >
+            <span>★</span>
+            Reviews
+        </button>
+
+
+        <button
+            class="nav-item"
+            data-section="settings"
+        >
+            <span>⚙</span>
+            Settings
+        </button>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <a href="index.html">
+            ← View Website
+        </a>
+
+        <button id="logoutBtn">
+            Logout
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ==================================================
+     MAIN
+================================================== -->
+
+<main class="admin-main">
+
+
+<!-- ==================================================
+     TOPBAR
+================================================== -->
+
+<header class="admin-topbar">
+
+    <button
+        class="mobile-menu"
+        id="mobileMenu"
+    >
+        ☰
+    </button>
+
+
+    <div>
+
+        <span class="top-label">
+            OWNER DASHBOARD
+        </span>
+
+        <h1 id="pageTitle">
+            Dashboard
+        </h1>
+
+    </div>
+
+
+    <div class="admin-profile">
+
+        <div class="profile-avatar">
+            V
+        </div>
+
+        <div>
+
+            <strong>
+                Velora Owner
+            </strong>
+
+            <small>
+                Administrator
+            </small>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==================================================
+     DASHBOARD
+================================================== -->
+
+<section
+    class="admin-section active"
+    id="dashboard"
+>
+
+    <div class="welcome-box">
+
+        <div>
+
+            <span>
+                WELCOME BACK
+            </span>
+
+            <h2>
+                Manage your
+                <em>studio.</em>
+            </h2>
+
+            <p>
+                Keep track of appointments,
+                services and your salon experience.
+            </p>
+
+        </div>
+
+
+        <div class="welcome-symbol">
+            V
+        </div>
+
+    </div>
+
+
+    <div class="stats-grid">
+
+        <div class="admin-stat">
+
+            <span>
+                Total Appointments
+            </span>
+
+            <strong id="totalBookings">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="admin-stat">
+
+            <span>
+                Pending
+            </span>
+
+            <strong id="pendingBookings">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="admin-stat">
+
+            <span>
+                Confirmed
+            </span>
+
+            <strong id="confirmedBookings">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="admin-stat revenue-card">
+
+            <div class="stat-icon">
+                ₹
+            </div>
+
+            <div>
+
+                <span>
+                    Total Revenue
+                </span>
+
+                <h2 id="totalRevenue">
+                    ₹0
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat">
+
+            <span>
+                Services
+            </span>
+
+            <strong id="totalServices">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="admin-card">
+
+        <div class="card-heading">
+
+            <div>
+
+                <span>
+                    RECENT ACTIVITY
+                </span>
+
+                <h2>
+                    Appointments
+                </h2>
+
+            </div>
+
+
+            <button
+                class="dark-btn"
+                onclick="showSection('appointments')"
+            >
+                View All
+            </button>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Customer</th>
+                        <th>Service</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="recentAppointments"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     APPOINTMENTS
+================================================== -->
+
+<section
+    class="admin-section"
+    id="appointments"
+>
+
+    <div class="section-top">
+
+        <div>
+
+            <span>
+                BOOKINGS
+            </span>
+
+            <h2>
+                Appointments
+            </h2>
+
+        </div>
+
+
+        <button
+            class="dark-btn"
+            onclick="loadBookings()"
+        >
+            ↻ Refresh
+        </button>
+
+    </div>
+
+
+    <div class="admin-card">
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Customer</th>
+                        <th>Phone</th>
+                        <th>Service</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="appointmentsTable"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     SERVICES
+================================================== -->
+
+<section
+    class="admin-section"
+    id="services"
+>
+
+    <div class="section-top">
+
+        <div>
+
+            <span>
+                MANAGEMENT
+            </span>
+
+            <h2>
+                Services
+            </h2>
+
+        </div>
+
+
+        <button
+            class="gold-btn"
+            onclick="openServiceModal()"
+        >
+            + Add Service
+        </button>
+
+    </div>
+
+
+    <div
+        class="services-admin-grid"
+        id="servicesAdminGrid"
+    >
+
+        <div class="admin-loading">
+            Loading services...
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     SERVICE MODAL
+================================================== -->
+
+<div
+    class="service-modal"
+    id="serviceModal"
+>
+
+    <div class="service-modal-box">
+
+        <div class="service-modal-header">
+
+            <div>
+
+                <span>
+                    MANAGEMENT
+                </span>
+
+                <h2 id="serviceModalTitle">
+                    Add Service
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                onclick="closeServiceModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="serviceForm">
+
+            <input
+                type="hidden"
+                id="serviceId"
+            >
+
+
+            <div class="form-group">
+
+                <label>
+                    Service Name
+                </label>
+
+                <input
+                    type="text"
+                    id="serviceName"
+                    placeholder="e.g. Keratin Treatment"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Description
+                </label>
+
+                <textarea
+                    id="serviceDescription"
+                    placeholder="Describe the service..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Price (₹)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="servicePrice"
+                        placeholder="1999"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Duration (minutes)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="serviceDuration"
+                        placeholder="120"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Image URL
+                </label>
+
+                <input
+                    type="url"
+                    id="serviceImage"
+                    placeholder="https://..."
+                >
+
+            </div>
+
+
+            <div class="service-active-row">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="serviceActive"
+                        checked
+                    >
+
+                    Active Service
+
+                </label>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    onclick="closeServiceModal()"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="gold-btn"
+                    id="serviceSubmitBtn"
+                >
+                    Add Service
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==================================================
+     GALLERY
+================================================== -->
+
+<section
+    class="admin-section"
+    id="gallery"
+>
+
+    <div class="section-top">
+
+        <div>
+
+            <span>
+                CONTENT MANAGEMENT
+            </span>
+
+            <h2>
+                Gallery
+            </h2>
+
+        </div>
+
+
+        <button
+            class="gold-btn"
+            id="addGalleryBtn"
+        >
+            + Add Image
+        </button>
+
+    </div>
+
+
+    <div
+        class="gallery-admin-grid"
+        id="galleryAdminGrid"
+    >
+
+        <div class="admin-loading">
+            Loading gallery...
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     GALLERY MODAL
+================================================== -->
+
+<div
+    class="admin-modal"
+    id="galleryModal"
+>
+
+    <div class="admin-modal-box">
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeGalleryModal"
+        >
+            ×
+        </button>
+
+
+        <span class="modal-label">
+            GALLERY MANAGEMENT
+        </span>
+
+
+        <h2 id="galleryModalTitle">
+            Add Gallery Image
+        </h2>
+
+
+        <form id="galleryForm">
+
+            <input
+                type="hidden"
+                id="galleryId"
+            >
+
+
+            <div class="form-group">
+
+                <label>
+                    Image Title
+                </label>
+
+                <input
+                    type="text"
+                    id="galleryTitle"
+                    placeholder="Example: Signature Haircut"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Category
+                </label>
+
+                <select
+                    id="galleryCategory"
+                    required
+                >
+
+                    <option value="">
+                        Select category
+                    </option>
+
+                    <option value="Hair">
+                        Hair
+                    </option>
+
+                    <option value="Spa">
+                        Spa
+                    </option>
+
+                    <option value="Bridal">
+                        Bridal
+                    </option>
+
+                    <option value="Beard">
+                        Beard
+                    </option>
+
+                    <option value="Makeup">
+                        Makeup
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Gallery Image
+                </label>
+
+                <input
+                    type="file"
+                    id="galleryImageFile"
+                    accept="image/jpeg,image/png,image/webp"
+                >
+
+                <small>
+                    JPG, PNG or WEBP • Max 5MB
+                </small>
+
+            </div>
+
+
+            <div
+                class="gallery-preview"
+                id="galleryPreview"
+            >
+
+                <span>
+                    Image preview
+                </span>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelGalleryBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="gold-btn"
+                    id="saveGalleryBtn"
+                >
+                    Add Image
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!---------- REVIEW MANAGEMENT---------->
+<section class="admin-section" id="reviews">
+
+    <div class="section-top">
+        <div>
+            <span>REPUTATION MANAGEMENT</span>
+            <h2>Customer Reviews</h2>
+        </div>
+
+        <button class="gold-btn" id="addReviewBtn">
+            + Add Review
+        </button>
+    </div>
+
+    <!-- Review Stats -->
+    <div class="review-stats">
+
+        <div class="review-stat-card">
+            <span>Total Reviews</span>
+            <strong id="totalReviews">0</strong>
+        </div>
+
+        <div class="review-stat-card">
+            <span>Average Rating</span>
+            <strong id="averageRating">0.0 ⭐</strong>
+        </div>
+
+        <div class="review-stat-card">
+            <span>Active Reviews</span>
+            <strong id="activeReviews">0</strong>
+        </div>
+
+    </div>
+
+    <!-- Reviews Grid -->
+    <div class="reviews-admin-grid" id="reviewsAdminGrid">
+
+        <div class="admin-loading">
+            Loading reviews...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REVIEW MODAL ================= -->
+
+<div class="admin-modal" id="reviewModal">
+
+    <div class="admin-modal-content">
+
+        <div class="modal-header">
+
+            <div>
+                <span>REVIEW MANAGEMENT</span>
+                <h2 id="reviewModalTitle">Add Review</h2>
+            </div>
+
+            <button class="modal-close" id="closeReviewModal">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="reviewForm">
+
+            <input type="hidden" id="reviewId">
+
+
+            <div class="form-group">
+
+                <label>Customer Name</label>
+
+                <input
+                    type="text"
+                    id="reviewAuthor"
+                    placeholder="Enter customer name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Rating</label>
+
+                <select id="reviewRating" required>
+
+                    <option value="">Select rating</option>
+
+                    <option value="5">5 ⭐⭐⭐⭐⭐</option>
+                    <option value="4.5">4.5 ⭐⭐⭐⭐½</option>
+                    <option value="4">4 ⭐⭐⭐⭐</option>
+                    <option value="3.5">3.5 ⭐⭐⭐½</option>
+                    <option value="3">3 ⭐⭐⭐</option>
+                    <option value="2.5">2.5 ⭐⭐½</option>
+                    <option value="2">2 ⭐⭐</option>
+                    <option value="1.5">1.5 ⭐½</option>
+                    <option value="1">1 ⭐</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Source</label>
+
+                <input
+                    type="text"
+                    id="reviewSource"
+                    placeholder="Google / Demo / Website"
+                    value="Demo"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Review</label>
+
+                <textarea
+                    id="reviewText"
+                    rows="5"
+                    placeholder="Write customer review..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="gold-btn review-submit-btn"
+                id="saveReviewBtn"
+            >
+                Save Review
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- ==================================================
+     SETTINGS
+================================================== -->
+
+<section
+    class="admin-section"
+    id="settings"
+>
+
+    <div class="section-top">
+
+        <div>
+
+            <span>
+                BUSINESS
+            </span>
+
+            <h2>
+                Settings
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <form
+        class="settings-grid"
+        id="settingsForm"
+    >
+
+
+        <!-- BUSINESS INFO -->
+
+        <div class="admin-card">
+
+            <h3>
+                Business Information
+            </h3>
+
+
+            <div class="setting-group">
+
+                <label>
+                    Business Name
+                </label>
+
+                <input
+                    type="text"
+                    id="settingsBusinessName"
+                    placeholder="Velora Studio"
+                    required
+                >
+
+            </div>
+
+
+            <div class="setting-group">
+
+                <label>
+                    Tagline
+                </label>
+
+                <input
+                    type="text"
+                    id="settingsTagline"
+                    placeholder="Beauty, confidence & style"
+                >
+
+            </div>
+
+
+            <div class="setting-group">
+
+                <label>
+                    Phone
+                </label>
+
+                <input
+                    type="text"
+                    id="settingsPhone"
+                    placeholder="9999999999"
+                >
+
+            </div>
+
+
+            <div class="setting-group">
+
+                <label>
+                    WhatsApp
+                </label>
+
+                <input
+                    type="text"
+                    id="settingsWhatsapp"
+                    placeholder="919999999999"
+                >
+
+            </div>
+
+
+            <div class="setting-group">
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="settingsEmail"
+                    placeholder="hello@velora.com"
+                >
+
+            </div>
+
+
+            <div class="setting-group">
+
+                <label>
+                    Address
+                </label>
+
+                <textarea
+                    id="settingsAddress"
+                    placeholder="Indore, Madhya Pradesh"
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HOURS -->
+
+        <div class="admin-card">
+
+            <h3>
+                Opening Hours
+            </h3>
+
+
+            <div class="setting-group">
+
+                <label>
+                    Opening Time
+                </label>
+
+                <input
+                    type="time"
+                    id="settingsOpening"
+                >
+
+            </div>
+
+
+            <div class="setting-group">
+
+                <label>
+                    Closing Time
+                </label>
+
+                <input
+                    type="time"
+                    id="settingsClosing"
+                >
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SOCIAL -->
+
+        <div class="admin-card">
+
+            <h3>
+                Social & Links
+            </h3>
+
+
+            <div class="setting-group">
+
+                <label>
+                    Instagram URL
+                </label>
+
+                <input
+                    type="url"
+                    id="settingsInstagram"
+                    placeholder="https://instagram.com/..."
+                >
+
+            </div>
+
+
+            <div class="setting-group">
+
+                <label>
+                    Facebook URL
+                </label>
+
+                <input
+                    type="url"
+                    id="settingsFacebook"
+                    placeholder="https://facebook.com/..."
+                >
+
+            </div>
+
+
+            <div class="setting-group">
+
+                <label>
+                    Google Maps URL
+                </label>
+
+                <input
+                    type="url"
+                    id="settingsMap"
+                    placeholder="https://maps.google.com/..."
+                >
+
+            </div>
+
+
+            <div class="setting-group">
+
+                <label>
+                    Logo Image
+                </label>
+
+                <input
+                    type="file"
+                    id="settingsLogoFile"
+                    accept="image/jpeg,image/png,image/webp"
+                >
+
+                <small>
+                    JPG, PNG or WEBP • Max 5MB
+                </small>
+
+                <div id="settingsLogoPreview"></div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="gold-btn"
+                id="saveSettingsBtn"
+            >
+                Save Changes
+            </button>
+
+        </div>
+
+
+    </form>
+
+</section>
+
+
+</main>
+
+
+
+<!-- ==================================================
+     TOAST
+================================================== -->
+
+<div
+    class="admin-toast"
+    id="adminToast"
+>
+
+    <span>
+        ✓
+    </span>
+
+    <p id="adminToastMessage">
+        Success
+    </p>
+
+</div>
+
+
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>
